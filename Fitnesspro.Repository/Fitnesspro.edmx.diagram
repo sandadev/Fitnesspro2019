@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6ec19d584074fce88320da1e75577cc" Name="Diagram1">
+        <EntityTypeShape EntityType="FitnessProModel.AdminPackageName" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ClosedDate" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.Duration" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.EntityPayment" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.EntityType" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ExtraTime" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.FitnessList" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.OnlineBookingService" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.PackageDetail" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.Repeat" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.Service" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ServiceAvailable" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ServiceGroup" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ServicePriceOption" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ServiceSetting" Width="1.5" PointX="7.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.ShiftTiming" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.Staff" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.StaffWorkingHour" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.Tax" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.UserPermission" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessProModel.VoucherExpiry" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="FitnessProModel.FK__EntityPay__Packa__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__FitnessLi__Entit__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__ServiceGr__Entit__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__Staff__EntityId__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__PackageDe__Fitne__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__OnlineBoo__Servi__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__Service__Service__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__ServicePr__Servi__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__ServiceSe__Servi__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessProModel.FK__StaffWork__Staff__66603565" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.Business", "Fitnesspro.Business", "{B73BCE27-E6EA-4D55-BEA2-197F1EF868FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.Infrastructure.Interface", "Fitnesspro.Infrastructure.Interface", "{AFBEB383-D54E-485A-9BD4-DBA0160476E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.Infrastructure.Models", "Fitnesspro.Infrastructure.Models", "{25DCDA2C-1F7A-46FA-A14A-6159AA51F631}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.Infrastructure.Utilities", "Fitnesspro.Infrastructure.Utilities", "{10537C05-F229-4745-8D03-5D3C8FE67D57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.Repository", "Fitnesspro.Repository", "{BD585C6C-6861-4225-91EE-4FFDD60039AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.Web", "Fitnesspro.Web", "{27C8BC3C-3E2B-4365-B043-621083190C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fitnesspro.WebApi", "Fitnesspro.WebApi", "{0985189F-8C06-44A1-9CB7-E4925D45F214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro.Business", "Fitnesspro.Business\Fitnesspro.Business.csproj", "{38D9449F-ED27-4224-B18C-AEA585E3B8BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro.Infrastructure.Interface", "Fitnesspro.Infrastructure.Interface\Fitnesspro.Infrastructure.Interface.csproj", "{13FAA27A-84F8-493A-8DC6-2944EECC4849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro.Infrastructure.Models", "Fitnesspro.Infrastructure.Models\Fitnesspro.Infrastructure.Models.csproj", "{1389BBEA-BC27-4964-9ACC-85202FC4CFCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro.Infrastructure.Utilities", "Fitnesspro.Infrastructure.Utilities\Fitnesspro.Infrastructure.Utilities.csproj", "{A67D3871-85C4-4A74-B9B2-9A635725D16D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro.Repository", "Fitnesspro.Repository\Fitnesspro.Repository.csproj", "{121B19D5-A13F-4D33-8591-83C064E0A9E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro", "Fitnesspro\Fitnesspro.csproj", "{64A5DF72-68A9-4452-A0C8-CB1CE19B45C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnesspro.Service", "Fitnesspro.Service\Fitnesspro.Service.csproj", "{6E1E734A-342A-410D-8479-694B84601C50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38D9449F-ED27-4224-B18C-AEA585E3B8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D9449F-ED27-4224-B18C-AEA585E3B8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D9449F-ED27-4224-B18C-AEA585E3B8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D9449F-ED27-4224-B18C-AEA585E3B8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FAA27A-84F8-493A-8DC6-2944EECC4849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FAA27A-84F8-493A-8DC6-2944EECC4849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FAA27A-84F8-493A-8DC6-2944EECC4849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FAA27A-84F8-493A-8DC6-2944EECC4849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1389BBEA-BC27-4964-9ACC-85202FC4CFCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1389BBEA-BC27-4964-9ACC-85202FC4CFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1389BBEA-BC27-4964-9ACC-85202FC4CFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1389BBEA-BC27-4964-9ACC-85202FC4CFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A67D3871-85C4-4A74-B9B2-9A635725D16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A67D3871-85C4-4A74-B9B2-9A635725D16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A67D3871-85C4-4A74-B9B2-9A635725D16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A67D3871-85C4-4A74-B9B2-9A635725D16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121B19D5-A13F-4D33-8591-83C064E0A9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121B19D5-A13F-4D33-8591-83C064E0A9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121B19D5-A13F-4D33-8591-83C064E0A9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121B19D5-A13F-4D33-8591-83C064E0A9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A5DF72-68A9-4452-A0C8-CB1CE19B45C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A5DF72-68A9-4452-A0C8-CB1CE19B45C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A5DF72-68A9-4452-A0C8-CB1CE19B45C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A5DF72-68A9-4452-A0C8-CB1CE19B45C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E1E734A-342A-410D-8479-694B84601C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E1E734A-342A-410D-8479-694B84601C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E1E734A-342A-410D-8479-694B84601C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E1E734A-342A-410D-8479-694B84601C50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38D9449F-ED27-4224-B18C-AEA585E3B8BA} = {B73BCE27-E6EA-4D55-BEA2-197F1EF868FD}
+		{13FAA27A-84F8-493A-8DC6-2944EECC4849} = {AFBEB383-D54E-485A-9BD4-DBA0160476E3}
+		{1389BBEA-BC27-4964-9ACC-85202FC4CFCA} = {25DCDA2C-1F7A-46FA-A14A-6159AA51F631}
+		{A67D3871-85C4-4A74-B9B2-9A635725D16D} = {10537C05-F229-4745-8D03-5D3C8FE67D57}
+		{121B19D5-A13F-4D33-8591-83C064E0A9E8} = {BD585C6C-6861-4225-91EE-4FFDD60039AC}
+		{64A5DF72-68A9-4452-A0C8-CB1CE19B45C0} = {27C8BC3C-3E2B-4365-B043-621083190C38}
+		{6E1E734A-342A-410D-8479-694B84601C50} = {0985189F-8C06-44A1-9CB7-E4925D45F214}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1389BE3E-186B-4B15-863A-BDCB4F90A7B2}
+	EndGlobalSection
+EndGlobal

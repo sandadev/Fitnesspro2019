@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FitnessProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminPackageName">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackageName" Type="varchar" MaxLength="100" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="Months" Type="int" />
+        </EntityType>
+        <EntityType Name="ClosedDates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Duration">
+          <Key>
+            <PropertyRef Name="DurationId" />
+          </Key>
+          <Property Name="DurationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Minutes" Type="int" />
+          <Property Name="Duration" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EntityPayment">
+          <Key>
+            <PropertyRef Name="RecieptNumber" />
+          </Key>
+          <Property Name="RecieptNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentType" Type="char" MaxLength="20" />
+          <Property Name="PaymentAmount" Type="money" />
+          <Property Name="PaymentDate" Type="date" />
+          <Property Name="DueDate" Type="date" />
+          <Property Name="ReferrenceNumber" Type="bigint" />
+          <Property Name="PackageId" Type="int" />
+        </EntityType>
+        <EntityType Name="EntityType">
+          <Key>
+            <PropertyRef Name="EntityId" />
+          </Key>
+          <Property Name="EntityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ExtraTime">
+          <Key>
+            <PropertyRef Name="TimeId" />
+          </Key>
+          <Property Name="TimeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExtraTimeName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FitnessList">
+          <Key>
+            <PropertyRef Name="FitnessId" />
+          </Key>
+          <Property Name="FitnessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FitnessName" Type="varchar" MaxLength="100" />
+          <Property Name="EntityId" Type="int" />
+          <Property Name="HolderFirtName" Type="varchar" MaxLength="100" />
+          <Property Name="HolderLastName" Type="varchar" MaxLength="100" />
+          <Property Name="MobileNumber" Type="bigint" />
+          <Property Name="EntityAddress" Type="varchar" MaxLength="250" />
+          <Property Name="EstablishedYear" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="EnrollDate" Type="date" />
+          <Property Name="Openat" Type="time" Precision="7" />
+          <Property Name="Closeat" Type="time" Precision="7" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="InstructionMessage" Type="varchar" MaxLength="255" />
+          <Property Name="About" Type="varchar" MaxLength="255" />
+          <Property Name="FeedBack" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OnlineBookingService">
+          <Key>
+            <PropertyRef Name="BookingId" />
+          </Key>
+          <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnableOnlineBooking" Type="bit" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="ServiceAvailableFor" Type="int" />
+          <Property Name="ServiceId" Type="int" />
+        </EntityType>
+        <EntityType Name="PackageDetails">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Package" Type="varchar" MaxLength="200" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Note" Type="varchar" MaxLength="500" />
+          <Property Name="EntityStatus" Type="varchar" MaxLength="500" />
+          <Property Name="FitnessId" Type="int" />
+        </EntityType>
+        <EntityType Name="Repeats">
+          <Key>
+            <PropertyRef Name="RepeatId" />
+          </Key>
+          <Property Name="RepeatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="varchar" MaxLength="50" />
+          <Property Name="TreatmentType" Type="int" />
+          <Property Name="ServiceGroupId" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceAvailable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceAvailable" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ServiceGroup">
+          <Key>
+            <PropertyRef Name="ServiceGroupId" />
+          </Key>
+          <Property Name="ServiceGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="50" />
+          <Property Name="AppointmentColor" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="EntityId" Type="int" />
+        </EntityType>
+        <EntityType Name="ServicePriceOption">
+          <Key>
+            <PropertyRef Name="PricingId" />
+          </Key>
+          <Property Name="PricingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DurationId" Type="int" />
+          <Property Name="RetailPrice" Type="money" />
+          <Property Name="PricingName" Type="varchar" MaxLength="50" />
+          <Property Name="SpecialPrice" Type="money" />
+          <Property Name="ServiceId" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceSetting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExtraTimeType" Type="int" />
+          <Property Name="DurationId" Type="int" />
+          <Property Name="Tax" Type="int" />
+          <Property Name="EnableVoucherSale" Type="bit" />
+          <Property Name="VoucherExpiryPeriod" Type="int" />
+          <Property Name="EnableCommission" Type="bit" />
+          <Property Name="ServiceId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'FitnessPro.FitnessPro.ServiceStaff' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ServiceStaff">
+          <Property Name="StaffId" Type="int" />
+          <Property Name="ServiceId" Type="int" />
+        </EntityType>-->
+        <EntityType Name="ShiftTimings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShiftTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="MobileNumber" Type="bigint" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="UserPermission" Type="int" />
+          <Property Name="EnableAppointmentBooking" Type="bit" />
+          <Property Name="AppointmentColor" Type="int" />
+          <Property Name="StaffTitle" Type="varchar" MaxLength="50" />
+          <Property Name="Notes" Type="varchar" MaxLength="255" />
+          <Property Name="EmploymentStartDate" Type="date" />
+          <Property Name="EmploymentEndDate" Type="date" />
+          <Property Name="EntityId" Type="int" />
+        </EntityType>
+        <EntityType Name="StaffWorkingHours">
+          <Key>
+            <PropertyRef Name="WorkingHourId" />
+          </Key>
+          <Property Name="WorkingHourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShiftStart" Type="time" Precision="7" />
+          <Property Name="ShiftEnd" Type="time" Precision="7" />
+          <Property Name="Repeat" Type="int" />
+          <Property Name="StaffId" Type="int" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="TaxId" />
+          </Key>
+          <Property Name="TaxId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UserPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PermissionName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VoucherExpiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__EntityPay__Packa__44FF419A">
+          <End Role="PackageDetails" Type="Self.PackageDetails" Multiplicity="0..1" />
+          <End Role="EntityPayment" Type="Self.EntityPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageDetails">
+              <PropertyRef Name="PackageId" />
+            </Principal>
+            <Dependent Role="EntityPayment">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FitnessLi__Entit__3D5E1FD2">
+          <End Role="EntityType" Type="Self.EntityType" Multiplicity="0..1" />
+          <End Role="FitnessList" Type="Self.FitnessList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityType">
+              <PropertyRef Name="EntityId" />
+            </Principal>
+            <Dependent Role="FitnessList">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OnlineBoo__Servi__5165187F">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="OnlineBookingService" Type="Self.OnlineBookingService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceId" />
+            </Principal>
+            <Dependent Role="OnlineBookingService">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageDe__Fitne__4222D4EF">
+          <End Role="FitnessList" Type="Self.FitnessList" Multiplicity="0..1" />
+          <End Role="PackageDetails" Type="Self.PackageDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FitnessList">
+              <PropertyRef Name="FitnessId" />
+            </Principal>
+            <Dependent Role="PackageDetails">
+              <PropertyRef Name="FitnessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__Service__4AB81AF0">
+          <End Role="ServiceGroup" Type="Self.ServiceGroup" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceGroup">
+              <PropertyRef Name="ServiceGroupId" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="ServiceGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Entit__47DBAE45">
+          <End Role="EntityType" Type="Self.EntityType" Multiplicity="0..1" />
+          <End Role="ServiceGroup" Type="Self.ServiceGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityType">
+              <PropertyRef Name="EntityId" />
+            </Principal>
+            <Dependent Role="ServiceGroup">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServicePr__Servi__4D94879B">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServicePriceOption" Type="Self.ServicePriceOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceId" />
+            </Principal>
+            <Dependent Role="ServicePriceOption">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceSe__Servi__5535A963">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServiceSetting" Type="Self.ServiceSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceId" />
+            </Principal>
+            <Dependent Role="ServiceSetting">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__EntityId__619B8048">
+          <End Role="EntityType" Type="Self.EntityType" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityType">
+              <PropertyRef Name="EntityId" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StaffWork__Staff__66603565">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="StaffWorkingHours" Type="Self.StaffWorkingHours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="StaffWorkingHours">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FitnessProModelStoreContainer">
+          <EntitySet Name="AdminPackageName" EntityType="Self.AdminPackageName" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ClosedDates" EntityType="Self.ClosedDates" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="Duration" EntityType="Self.Duration" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="EntityPayment" EntityType="Self.EntityPayment" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="EntityType" EntityType="Self.EntityType" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ExtraTime" EntityType="Self.ExtraTime" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="FitnessList" EntityType="Self.FitnessList" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="OnlineBookingService" EntityType="Self.OnlineBookingService" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="PackageDetails" EntityType="Self.PackageDetails" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="Repeats" EntityType="Self.Repeats" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ServiceAvailable" EntityType="Self.ServiceAvailable" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ServiceGroup" EntityType="Self.ServiceGroup" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ServicePriceOption" EntityType="Self.ServicePriceOption" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ServiceSetting" EntityType="Self.ServiceSetting" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="ShiftTimings" EntityType="Self.ShiftTimings" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="StaffWorkingHours" EntityType="Self.StaffWorkingHours" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="Tax" EntityType="Self.Tax" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="FitnessPro" store:Type="Tables" />
+          <EntitySet Name="VoucherExpiry" EntityType="Self.VoucherExpiry" Schema="FitnessPro" store:Type="Tables" />
+          <AssociationSet Name="FK__EntityPay__Packa__44FF419A" Association="Self.FK__EntityPay__Packa__44FF419A">
+            <End Role="PackageDetails" EntitySet="PackageDetails" />
+            <End Role="EntityPayment" EntitySet="EntityPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FitnessLi__Entit__3D5E1FD2" Association="Self.FK__FitnessLi__Entit__3D5E1FD2">
+            <End Role="EntityType" EntitySet="EntityType" />
+            <End Role="FitnessList" EntitySet="FitnessList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OnlineBoo__Servi__5165187F" Association="Self.FK__OnlineBoo__Servi__5165187F">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="OnlineBookingService" EntitySet="OnlineBookingService" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageDe__Fitne__4222D4EF" Association="Self.FK__PackageDe__Fitne__4222D4EF">
+            <End Role="FitnessList" EntitySet="FitnessList" />
+            <End Role="PackageDetails" EntitySet="PackageDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__Service__4AB81AF0" Association="Self.FK__Service__Service__4AB81AF0">
+            <End Role="ServiceGroup" EntitySet="ServiceGroup" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Entit__47DBAE45" Association="Self.FK__ServiceGr__Entit__47DBAE45">
+            <End Role="EntityType" EntitySet="EntityType" />
+            <End Role="ServiceGroup" EntitySet="ServiceGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServicePr__Servi__4D94879B" Association="Self.FK__ServicePr__Servi__4D94879B">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ServicePriceOption" EntitySet="ServicePriceOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceSe__Servi__5535A963" Association="Self.FK__ServiceSe__Servi__5535A963">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ServiceSetting" EntitySet="ServiceSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__EntityId__619B8048" Association="Self.FK__Staff__EntityId__619B8048">
+            <End Role="EntityType" EntitySet="EntityType" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StaffWork__Staff__66603565" Association="Self.FK__StaffWork__Staff__66603565">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="StaffWorkingHours" EntitySet="StaffWorkingHours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FitnessProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminPackageName">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Months" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ClosedDate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Duration">
+          <Key>
+            <PropertyRef Name="DurationId" />
+          </Key>
+          <Property Name="DurationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Minutes" Type="Int32" />
+          <Property Name="Duration1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EntityPayment">
+          <Key>
+            <PropertyRef Name="RecieptNumber" />
+          </Key>
+          <Property Name="RecieptNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentType" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="0" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="ReferrenceNumber" Type="Int64" />
+          <Property Name="PackageId" Type="Int32" />
+          <NavigationProperty Name="PackageDetail" Relationship="Self.FK__EntityPay__Packa__44FF419A" FromRole="EntityPayment" ToRole="PackageDetails" />
+        </EntityType>
+        <EntityType Name="EntityType">
+          <Key>
+            <PropertyRef Name="EntityId" />
+          </Key>
+          <Property Name="EntityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FitnessLists" Relationship="Self.FK__FitnessLi__Entit__3D5E1FD2" FromRole="EntityType" ToRole="FitnessList" />
+          <NavigationProperty Name="ServiceGroups" Relationship="Self.FK__ServiceGr__Entit__47DBAE45" FromRole="EntityType" ToRole="ServiceGroup" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__EntityId__619B8048" FromRole="EntityType" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="ExtraTime">
+          <Key>
+            <PropertyRef Name="TimeId" />
+          </Key>
+          <Property Name="TimeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExtraTimeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FitnessList">
+          <Key>
+            <PropertyRef Name="FitnessId" />
+          </Key>
+          <Property Name="FitnessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FitnessName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EntityId" Type="Int32" />
+          <Property Name="HolderFirtName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HolderLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="Int64" />
+          <Property Name="EntityAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="EstablishedYear" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnrollDate" Type="DateTime" Precision="0" />
+          <Property Name="Openat" Type="Time" Precision="7" />
+          <Property Name="Closeat" Type="Time" Precision="7" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="InstructionMessage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="About" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FeedBack" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EntityType" Relationship="Self.FK__FitnessLi__Entit__3D5E1FD2" FromRole="FitnessList" ToRole="EntityType" />
+          <NavigationProperty Name="PackageDetails" Relationship="Self.FK__PackageDe__Fitne__4222D4EF" FromRole="FitnessList" ToRole="PackageDetails" />
+        </EntityType>
+        <EntityType Name="OnlineBookingService">
+          <Key>
+            <PropertyRef Name="BookingId" />
+          </Key>
+          <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnableOnlineBooking" Type="Boolean" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceAvailableFor" Type="Int32" />
+          <Property Name="ServiceId" Type="Int32" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__OnlineBoo__Servi__5165187F" FromRole="OnlineBookingService" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="PackageDetail">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Package" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EntityStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FitnessId" Type="Int32" />
+          <NavigationProperty Name="EntityPayments" Relationship="Self.FK__EntityPay__Packa__44FF419A" FromRole="PackageDetails" ToRole="EntityPayment" />
+          <NavigationProperty Name="FitnessList" Relationship="Self.FK__PackageDe__Fitne__4222D4EF" FromRole="PackageDetails" ToRole="FitnessList" />
+        </EntityType>
+        <EntityType Name="Repeat">
+          <Key>
+            <PropertyRef Name="RepeatId" />
+          </Key>
+          <Property Name="RepeatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TreatmentType" Type="Int32" />
+          <Property Name="ServiceGroupId" Type="Int32" />
+          <NavigationProperty Name="OnlineBookingServices" Relationship="Self.FK__OnlineBoo__Servi__5165187F" FromRole="Service" ToRole="OnlineBookingService" />
+          <NavigationProperty Name="ServiceGroup" Relationship="Self.FK__Service__Service__4AB81AF0" FromRole="Service" ToRole="ServiceGroup" />
+          <NavigationProperty Name="ServicePriceOptions" Relationship="Self.FK__ServicePr__Servi__4D94879B" FromRole="Service" ToRole="ServicePriceOption" />
+          <NavigationProperty Name="ServiceSettings" Relationship="Self.FK__ServiceSe__Servi__5535A963" FromRole="Service" ToRole="ServiceSetting" />
+        </EntityType>
+        <EntityType Name="ServiceAvailable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceAvailable1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ServiceGroup">
+          <Key>
+            <PropertyRef Name="ServiceGroupId" />
+          </Key>
+          <Property Name="ServiceGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AppointmentColor" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EntityId" Type="Int32" />
+          <NavigationProperty Name="EntityType" Relationship="Self.FK__ServiceGr__Entit__47DBAE45" FromRole="ServiceGroup" ToRole="EntityType" />
+          <NavigationProperty Name="Services" Relationship="Self.FK__Service__Service__4AB81AF0" FromRole="ServiceGroup" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="ServicePriceOption">
+          <Key>
+            <PropertyRef Name="PricingId" />
+          </Key>
+          <Property Name="PricingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DurationId" Type="Int32" />
+          <Property Name="RetailPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PricingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpecialPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ServiceId" Type="Int32" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__ServicePr__Servi__4D94879B" FromRole="ServicePriceOption" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="ServiceSetting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExtraTimeType" Type="Int32" />
+          <Property Name="DurationId" Type="Int32" />
+          <Property Name="Tax" Type="Int32" />
+          <Property Name="EnableVoucherSale" Type="Boolean" />
+          <Property Name="VoucherExpiryPeriod" Type="Int32" />
+          <Property Name="EnableCommission" Type="Boolean" />
+          <Property Name="ServiceId" Type="Int32" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__ServiceSe__Servi__5535A963" FromRole="ServiceSetting" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="ShiftTiming">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShiftTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="Int64" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPermission" Type="Int32" />
+          <Property Name="EnableAppointmentBooking" Type="Boolean" />
+          <Property Name="AppointmentColor" Type="Int32" />
+          <Property Name="StaffTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EmploymentStartDate" Type="DateTime" Precision="0" />
+          <Property Name="EmploymentEndDate" Type="DateTime" Precision="0" />
+          <Property Name="EntityId" Type="Int32" />
+          <NavigationProperty Name="EntityType" Relationship="Self.FK__Staff__EntityId__619B8048" FromRole="Staff" ToRole="EntityType" />
+          <NavigationProperty Name="StaffWorkingHours" Relationship="Self.FK__StaffWork__Staff__66603565" FromRole="Staff" ToRole="StaffWorkingHours" />
+        </EntityType>
+        <EntityType Name="StaffWorkingHour">
+          <Key>
+            <PropertyRef Name="WorkingHourId" />
+          </Key>
+          <Property Name="WorkingHourId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShiftStart" Type="Time" Precision="7" />
+          <Property Name="ShiftEnd" Type="Time" Precision="7" />
+          <Property Name="Repeat" Type="Int32" />
+          <Property Name="StaffId" Type="Int32" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__StaffWork__Staff__66603565" FromRole="StaffWorkingHours" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="TaxId" />
+          </Key>
+          <Property Name="TaxId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PermissionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VoucherExpiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__EntityPay__Packa__44FF419A">
+          <End Role="PackageDetails" Type="Self.PackageDetail" Multiplicity="0..1" />
+          <End Role="EntityPayment" Type="Self.EntityPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageDetails">
+              <PropertyRef Name="PackageId" />
+            </Principal>
+            <Dependent Role="EntityPayment">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FitnessLi__Entit__3D5E1FD2">
+          <End Role="EntityType" Type="Self.EntityType" Multiplicity="0..1" />
+          <End Role="FitnessList" Type="Self.FitnessList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityType">
+              <PropertyRef Name="EntityId" />
+            </Principal>
+            <Dependent Role="FitnessList">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Entit__47DBAE45">
+          <End Role="EntityType" Type="Self.EntityType" Multiplicity="0..1" />
+          <End Role="ServiceGroup" Type="Self.ServiceGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityType">
+              <PropertyRef Name="EntityId" />
+            </Principal>
+            <Dependent Role="ServiceGroup">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__EntityId__619B8048">
+          <End Role="EntityType" Type="Self.EntityType" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityType">
+              <PropertyRef Name="EntityId" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageDe__Fitne__4222D4EF">
+          <End Role="FitnessList" Type="Self.FitnessList" Multiplicity="0..1" />
+          <End Role="PackageDetails" Type="Self.PackageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FitnessList">
+              <PropertyRef Name="FitnessId" />
+            </Principal>
+            <Dependent Role="PackageDetails">
+              <PropertyRef Name="FitnessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OnlineBoo__Servi__5165187F">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="OnlineBookingService" Type="Self.OnlineBookingService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceId" />
+            </Principal>
+            <Dependent Role="OnlineBookingService">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__Service__4AB81AF0">
+          <End Role="ServiceGroup" Type="Self.ServiceGroup" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceGroup">
+              <PropertyRef Name="ServiceGroupId" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="ServiceGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServicePr__Servi__4D94879B">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServicePriceOption" Type="Self.ServicePriceOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceId" />
+            </Principal>
+            <Dependent Role="ServicePriceOption">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceSe__Servi__5535A963">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServiceSetting" Type="Self.ServiceSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceId" />
+            </Principal>
+            <Dependent Role="ServiceSetting">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StaffWork__Staff__66603565">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="StaffWorkingHours" Type="Self.StaffWorkingHour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="StaffWorkingHours">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FitnessProEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminPackageNames" EntityType="Self.AdminPackageName" />
+          <EntitySet Name="ClosedDates" EntityType="Self.ClosedDate" />
+          <EntitySet Name="Durations" EntityType="Self.Duration" />
+          <EntitySet Name="EntityPayments" EntityType="Self.EntityPayment" />
+          <EntitySet Name="EntityTypes" EntityType="Self.EntityType" />
+          <EntitySet Name="ExtraTimes" EntityType="Self.ExtraTime" />
+          <EntitySet Name="FitnessLists" EntityType="Self.FitnessList" />
+          <EntitySet Name="OnlineBookingServices" EntityType="Self.OnlineBookingService" />
+          <EntitySet Name="PackageDetails" EntityType="Self.PackageDetail" />
+          <EntitySet Name="Repeats" EntityType="Self.Repeat" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="ServiceAvailables" EntityType="Self.ServiceAvailable" />
+          <EntitySet Name="ServiceGroups" EntityType="Self.ServiceGroup" />
+          <EntitySet Name="ServicePriceOptions" EntityType="Self.ServicePriceOption" />
+          <EntitySet Name="ServiceSettings" EntityType="Self.ServiceSetting" />
+          <EntitySet Name="ShiftTimings" EntityType="Self.ShiftTiming" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="StaffWorkingHours" EntityType="Self.StaffWorkingHour" />
+          <EntitySet Name="Taxes" EntityType="Self.Tax" />
+          <EntitySet Name="UserPermissions" EntityType="Self.UserPermission" />
+          <EntitySet Name="VoucherExpiries" EntityType="Self.VoucherExpiry" />
+          <AssociationSet Name="FK__EntityPay__Packa__44FF419A" Association="Self.FK__EntityPay__Packa__44FF419A">
+            <End Role="PackageDetails" EntitySet="PackageDetails" />
+            <End Role="EntityPayment" EntitySet="EntityPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FitnessLi__Entit__3D5E1FD2" Association="Self.FK__FitnessLi__Entit__3D5E1FD2">
+            <End Role="EntityType" EntitySet="EntityTypes" />
+            <End Role="FitnessList" EntitySet="FitnessLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Entit__47DBAE45" Association="Self.FK__ServiceGr__Entit__47DBAE45">
+            <End Role="EntityType" EntitySet="EntityTypes" />
+            <End Role="ServiceGroup" EntitySet="ServiceGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__EntityId__619B8048" Association="Self.FK__Staff__EntityId__619B8048">
+            <End Role="EntityType" EntitySet="EntityTypes" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageDe__Fitne__4222D4EF" Association="Self.FK__PackageDe__Fitne__4222D4EF">
+            <End Role="FitnessList" EntitySet="FitnessLists" />
+            <End Role="PackageDetails" EntitySet="PackageDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OnlineBoo__Servi__5165187F" Association="Self.FK__OnlineBoo__Servi__5165187F">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="OnlineBookingService" EntitySet="OnlineBookingServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__Service__4AB81AF0" Association="Self.FK__Service__Service__4AB81AF0">
+            <End Role="ServiceGroup" EntitySet="ServiceGroups" />
+            <End Role="Service" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServicePr__Servi__4D94879B" Association="Self.FK__ServicePr__Servi__4D94879B">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="ServicePriceOption" EntitySet="ServicePriceOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceSe__Servi__5535A963" Association="Self.FK__ServiceSe__Servi__5535A963">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="ServiceSetting" EntitySet="ServiceSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StaffWork__Staff__66603565" Association="Self.FK__StaffWork__Staff__66603565">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="StaffWorkingHours" EntitySet="StaffWorkingHours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FitnessProModelStoreContainer" CdmEntityContainer="FitnessProEntities">
+          <EntitySetMapping Name="AdminPackageNames">
+            <EntityTypeMapping TypeName="FitnessProModel.AdminPackageName">
+              <MappingFragment StoreEntitySet="AdminPackageName">
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Months" ColumnName="Months" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClosedDates">
+            <EntityTypeMapping TypeName="FitnessProModel.ClosedDate">
+              <MappingFragment StoreEntitySet="ClosedDates">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Durations">
+            <EntityTypeMapping TypeName="FitnessProModel.Duration">
+              <MappingFragment StoreEntitySet="Duration">
+                <ScalarProperty Name="DurationId" ColumnName="DurationId" />
+                <ScalarProperty Name="Minutes" ColumnName="Minutes" />
+                <ScalarProperty Name="Duration1" ColumnName="Duration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntityPayments">
+            <EntityTypeMapping TypeName="FitnessProModel.EntityPayment">
+              <MappingFragment StoreEntitySet="EntityPayment">
+                <ScalarProperty Name="RecieptNumber" ColumnName="RecieptNumber" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="ReferrenceNumber" ColumnName="ReferrenceNumber" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntityTypes">
+            <EntityTypeMapping TypeName="FitnessProModel.EntityType">
+              <MappingFragment StoreEntitySet="EntityType">
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExtraTimes">
+            <EntityTypeMapping TypeName="FitnessProModel.ExtraTime">
+              <MappingFragment StoreEntitySet="ExtraTime">
+                <ScalarProperty Name="TimeId" ColumnName="TimeId" />
+                <ScalarProperty Name="ExtraTimeName" ColumnName="ExtraTimeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FitnessLists">
+            <EntityTypeMapping TypeName="FitnessProModel.FitnessList">
+              <MappingFragment StoreEntitySet="FitnessList">
+                <ScalarProperty Name="FitnessId" ColumnName="FitnessId" />
+                <ScalarProperty Name="FitnessName" ColumnName="FitnessName" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="HolderFirtName" ColumnName="HolderFirtName" />
+                <ScalarProperty Name="HolderLastName" ColumnName="HolderLastName" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="EntityAddress" ColumnName="EntityAddress" />
+                <ScalarProperty Name="EstablishedYear" ColumnName="EstablishedYear" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EnrollDate" ColumnName="EnrollDate" />
+                <ScalarProperty Name="Openat" ColumnName="Openat" />
+                <ScalarProperty Name="Closeat" ColumnName="Closeat" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="InstructionMessage" ColumnName="InstructionMessage" />
+                <ScalarProperty Name="About" ColumnName="About" />
+                <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OnlineBookingServices">
+            <EntityTypeMapping TypeName="FitnessProModel.OnlineBookingService">
+              <MappingFragment StoreEntitySet="OnlineBookingService">
+                <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+                <ScalarProperty Name="EnableOnlineBooking" ColumnName="EnableOnlineBooking" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ServiceAvailableFor" ColumnName="ServiceAvailableFor" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageDetails">
+            <EntityTypeMapping TypeName="FitnessProModel.PackageDetail">
+              <MappingFragment StoreEntitySet="PackageDetails">
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="Package" ColumnName="Package" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="EntityStatus" ColumnName="EntityStatus" />
+                <ScalarProperty Name="FitnessId" ColumnName="FitnessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Repeats">
+            <EntityTypeMapping TypeName="FitnessProModel.Repeat">
+              <MappingFragment StoreEntitySet="Repeats">
+                <ScalarProperty Name="RepeatId" ColumnName="RepeatId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="FitnessProModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="TreatmentType" ColumnName="TreatmentType" />
+                <ScalarProperty Name="ServiceGroupId" ColumnName="ServiceGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceAvailables">
+            <EntityTypeMapping TypeName="FitnessProModel.ServiceAvailable">
+              <MappingFragment StoreEntitySet="ServiceAvailable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServiceAvailable1" ColumnName="ServiceAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceGroups">
+            <EntityTypeMapping TypeName="FitnessProModel.ServiceGroup">
+              <MappingFragment StoreEntitySet="ServiceGroup">
+                <ScalarProperty Name="ServiceGroupId" ColumnName="ServiceGroupId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="AppointmentColor" ColumnName="AppointmentColor" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePriceOptions">
+            <EntityTypeMapping TypeName="FitnessProModel.ServicePriceOption">
+              <MappingFragment StoreEntitySet="ServicePriceOption">
+                <ScalarProperty Name="PricingId" ColumnName="PricingId" />
+                <ScalarProperty Name="DurationId" ColumnName="DurationId" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="PricingName" ColumnName="PricingName" />
+                <ScalarProperty Name="SpecialPrice" ColumnName="SpecialPrice" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceSettings">
+            <EntityTypeMapping TypeName="FitnessProModel.ServiceSetting">
+              <MappingFragment StoreEntitySet="ServiceSetting">
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="ExtraTimeType" ColumnName="ExtraTimeType" />
+                <ScalarProperty Name="DurationId" ColumnName="DurationId" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="EnableVoucherSale" ColumnName="EnableVoucherSale" />
+                <ScalarProperty Name="VoucherExpiryPeriod" ColumnName="VoucherExpiryPeriod" />
+                <ScalarProperty Name="EnableCommission" ColumnName="EnableCommission" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShiftTimings">
+            <EntityTypeMapping TypeName="FitnessProModel.ShiftTiming">
+              <MappingFragment StoreEntitySet="ShiftTimings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ShiftTime" ColumnName="ShiftTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="FitnessProModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserPermission" ColumnName="UserPermission" />
+                <ScalarProperty Name="EnableAppointmentBooking" ColumnName="EnableAppointmentBooking" />
+                <ScalarProperty Name="AppointmentColor" ColumnName="AppointmentColor" />
+                <ScalarProperty Name="StaffTitle" ColumnName="StaffTitle" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EmploymentStartDate" ColumnName="EmploymentStartDate" />
+                <ScalarProperty Name="EmploymentEndDate" ColumnName="EmploymentEndDate" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffWorkingHours">
+            <EntityTypeMapping TypeName="FitnessProModel.StaffWorkingHour">
+              <MappingFragment StoreEntitySet="StaffWorkingHours">
+                <ScalarProperty Name="WorkingHourId" ColumnName="WorkingHourId" />
+                <ScalarProperty Name="ShiftStart" ColumnName="ShiftStart" />
+                <ScalarProperty Name="ShiftEnd" ColumnName="ShiftEnd" />
+                <ScalarProperty Name="Repeat" ColumnName="Repeat" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taxes">
+            <EntityTypeMapping TypeName="FitnessProModel.Tax">
+              <MappingFragment StoreEntitySet="Tax">
+                <ScalarProperty Name="TaxId" ColumnName="TaxId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPermissions">
+            <EntityTypeMapping TypeName="FitnessProModel.UserPermission">
+              <MappingFragment StoreEntitySet="UserPermission">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VoucherExpiries">
+            <EntityTypeMapping TypeName="FitnessProModel.VoucherExpiry">
+              <MappingFragment StoreEntitySet="VoucherExpiry">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
