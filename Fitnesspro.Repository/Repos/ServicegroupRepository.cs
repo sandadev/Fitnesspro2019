@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Fitnesspro.Infrastructure.Models;
 using Fitnesspro.Infrastructure.Interface.DataAccess;
+using Fitnesspro.Repository;
 
 namespace Fitnesspro.Repository.Repos
 {
-    class UsergroupRepository :IServiceGroupRepository
+
+  public  class ServicegroupRepository :IServiceGroupRepository
     {
+        public ServicegroupRepository()
+        {
+
+        }
+
         MapperConfiguration config = new MapperConfiguration(cfg => {
             cfg.CreateMap<ServiceGroup, servicegroup>();
         });
@@ -23,7 +30,7 @@ namespace Fitnesspro.Repository.Repos
                 using (var context = new FitnessProEntities())
                 {
                     IMapper iMapper = config.CreateMapper();
-                    List<ServiceGroup> serviceGroup = context.ServiceGroups.ToList();
+                List<ServiceGroup> serviceGroup = context.ServiceGroups.ToList();
                     List<servicegroup> mServicegroup = iMapper.Map<List<ServiceGroup>, List<servicegroup>>(serviceGroup);
                     return mServicegroup;
                 }

@@ -14,6 +14,7 @@ namespace Fitnesspro.Service.Controllers
     public class ServiceManagerController : ApiController
     {
         private IServiceGroupManager _serviceGroupManager;
+      
         public ServiceManagerController(IServiceGroupManager serviceGroupManager)
         {
             _serviceGroupManager = serviceGroupManager;

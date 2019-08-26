@@ -13,6 +13,7 @@ namespace Fitnesspro.Service
     {
         protected void Application_Start()
         {
+            AutoFacConfiguration.Initialize(GlobalConfiguration.Configuration);
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

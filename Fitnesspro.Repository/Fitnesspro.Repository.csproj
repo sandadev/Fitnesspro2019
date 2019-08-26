@@ -118,7 +118,7 @@
     <Compile Include="Repeat.cs">
       <DependentUpon>Fitnesspro.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repos\UsergroupRepository.cs" />
+    <Compile Include="Repos\ServicegroupRepository.cs" />
     <Compile Include="Service.cs">
       <DependentUpon>Fitnesspro.tt</DependentUpon>
     </Compile>
@@ -191,5 +191,6 @@
       <Name>Fitnesspro.Infrastructure.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

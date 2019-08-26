@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.3.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
@@ -177,6 +183,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoFacConfiguration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -316,6 +323,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fitnesspro.Business\Fitnesspro.Business.csproj">
+      <Project>{38d9449f-ed27-4224-b18c-aea585e3b8ba}</Project>
+      <Name>Fitnesspro.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fitnesspro.Infrastructure.Interface\Fitnesspro.Infrastructure.Interface.csproj">
       <Project>{13faa27a-84f8-493a-8dc6-2944eecc4849}</Project>
       <Name>Fitnesspro.Infrastructure.Interface</Name>
@@ -323,6 +334,10 @@
     <ProjectReference Include="..\Fitnesspro.Infrastructure.Models\Fitnesspro.Infrastructure.Models.csproj">
       <Project>{1389bbea-bc27-4964-9acc-85202fc4cfca}</Project>
       <Name>Fitnesspro.Infrastructure.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fitnesspro.Repository\Fitnesspro.Repository.csproj">
+      <Project>{121b19d5-a13f-4d33-8591-83c064e0a9e8}</Project>
+      <Name>Fitnesspro.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

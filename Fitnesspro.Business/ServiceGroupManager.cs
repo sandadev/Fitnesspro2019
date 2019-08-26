@@ -9,7 +9,7 @@ using Fitnesspro.Infrastructure.Interface.DataAccess;
 
 namespace Fitnesspro.Business
 {
-    class ServiceGroupManager : IServiceGroupManager
+   public class ServiceGroupManager : IServiceGroupManager
     {
         private IServiceGroupRepository _servicegrouprepository;
         public ServiceGroupManager(IServiceGroupRepository servicegrouprepository)
