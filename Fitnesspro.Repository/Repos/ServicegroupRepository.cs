@@ -19,20 +19,35 @@ namespace Fitnesspro.Repository.Repos
         }
 
         MapperConfiguration config = new MapperConfiguration(cfg => {
-            cfg.CreateMap<ServiceGroup, servicegroup>();
+            cfg.CreateMap<ServiceGroup, ServiceViewModel>();
         });
         MapperConfiguration revMapConfig = new MapperConfiguration(cfg => {
-            cfg.CreateMap<servicegroup, ServiceGroup>();
+            cfg.CreateMap<ServiceViewModel, ServiceGroup>();
         });
 
-        public List<servicegroup> ServiceGroupList()
+        public List<ServiceViewModel> ServiceGroupList()
         {
                 using (var context = new FitnessProEntities())
                 {
-                    IMapper iMapper = config.CreateMapper();
-                List<ServiceGroup> serviceGroup = context.ServiceGroups.ToList();
-                    List<servicegroup> mServicegroup = iMapper.Map<List<ServiceGroup>, List<servicegroup>>(serviceGroup);
-                    return mServicegroup;
+                IMapper iMapper = config.CreateMapper();
+                List<ServiceViewModel> serviceGroup = (from sg in context.ServiceGroups
+                                                       group sg by sg.ServiceGroupId into sgg
+                                                       join s in context.Services on sgg.FirstOrDefault().ServiceGroupId equals s.ServiceGroupId
+                                                       select new ServiceViewModel
+                                                       {
+                                                           ServiceGroupId = sgg.FirstOrDefault().ServiceGroupId,
+                                                           GroupName = sgg.FirstOrDefault().GroupName,
+                                                           ServiceId = s.ServiceId,
+                                                           ServiceName = s.ServiceName
+                                                       }).ToList();
+
+
+
+
+                //List < servicegroup > mServicegroup = iMapper.Map<List<ServiceGroup>, List<ServiceViewModel>>(serviceGroup);
+                //    return mServicegroup;
+
+                return serviceGroup;
                 }
             
         }

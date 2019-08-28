@@ -9,6 +9,6 @@ namespace Fitnesspro.Infrastructure.Interface.DataAccess
 {
     public interface IServiceGroupRepository
     {
-        List<servicegroup> ServiceGroupList();
+        List<ServiceViewModel> ServiceGroupList();
     }
 }

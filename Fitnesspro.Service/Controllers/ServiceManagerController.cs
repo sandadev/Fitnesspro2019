@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using Fitnesspro.Infrastructure.Interface.Business;
 using Fitnesspro.Infrastructure.Models;
@@ -22,9 +23,12 @@ namespace Fitnesspro.Service.Controllers
       
         [Route("ServiceGroupList")]
         [HttpGet]
-        public List<servicegroup> TotalServiceGroupList()
+        public List<ServiceViewModel> TotalServiceGroupList()
         {
             return _serviceGroupManager.ServiceGroupList();
         }
+
+       
+
     }
 }

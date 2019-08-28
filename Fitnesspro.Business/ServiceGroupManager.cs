@@ -16,7 +16,7 @@ namespace Fitnesspro.Business
         {
             _servicegrouprepository = servicegrouprepository;
         }
-        public List<servicegroup> ServiceGroupList()
+        public List<ServiceViewModel> ServiceGroupList()
         {
           return  _servicegrouprepository.ServiceGroupList();
         }

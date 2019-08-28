@@ -172,15 +172,46 @@ modal
 
 @section vendors {
     <script>
-        $(document).ready(function () { $('#collapseServiceList').collapse() });
-        $('#servicepopup').hide();
-        //Calling add client method
-        $(document).on('click', '#btnAddNew', function () { $('#servicepopup').show() });
-        $(document).on('scroll', function () { $('#servicepopup').hide(); });
-        $(document).on('click', '#hideServiceList', function () { $('#collapseServiceList').collapse('hide') });
-        $(document).on('click', '#showServiceList', function () { $('#collapseServiceList').collapse('show') });
-        $(document).on('click', '#newService', function () { $('#servicepopup').hide(); $('#serviceModal').modal('show') });
-        $(document).on('click', '#header-close-button', function () { $('#serviceModal').modal('hide') });
+        $(document).ready(function () {
+            $('#collapseServiceList').collapse()
+            $('#servicepopup').hide();
+            //Calling add client method
+            $(document).on('click', '#btnAddNew', function () { $('#servicepopup').show() });
+            $(document).on('scroll', function () { $('#servicepopup').hide(); });
+            $(document).on('click', '#hideServiceList', function () { $('#collapseServiceList').collapse('hide') });
+            $(document).on('click', '#showServiceList', function () { $('#collapseServiceList').collapse('show') });
+            $(document).on('click', '#newService', function () { $('#servicepopup').hide(); $('#serviceModal').modal('show') });
+            $(document).on('click', '#header-close-button', function () { $('#serviceModal').modal('hide') });
+
+            CallTotalServiceGroupListApi();
+        });
+
+        function CallTotalServiceGroupListApi() {
+            var apiUrl = 'https://localhost:44367/api/Services/ServiceGroupList';
+            $.ajax({
+                type: "GET",
+                url: apiUrl,
+                data: "",
+                contentType: "application/json",
+                datatype: "json",
+                success: function (responseFromServer) {
+                    alert(responseFromServer.d)
+                },
+               error: function(jqXHR, textStatus, errorThrown) {
+                alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
+
+                $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
+                   console.log('jqXHR:');
+                   console.log(JSON.stringify(jqXHR));
+                console.log('textStatus:');
+                console.log(textStatus);
+                console.log('errorThrown:');
+                console.log(errorThrown);
+            }
+            });
+        }
+
     </script>
+   
 }
 
