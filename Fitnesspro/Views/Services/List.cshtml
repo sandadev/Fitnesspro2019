@@ -186,30 +186,58 @@ modal
             CallTotalServiceGroupListApi();
         });
 
-        function CallTotalServiceGroupListApi() {
-            var apiUrl = 'https://localhost:44367/api/Services/ServiceGroupList';
+
+          function CallTotalServiceGroupListApi() {
+            var getDashboardUrl ='http://localhost:44367/api/Services/ServiceGroupList'
             $.ajax({
                 type: "GET",
-                url: apiUrl,
-                data: "",
-                contentType: "application/json",
-                datatype: "json",
-                success: function (responseFromServer) {
-                    alert(responseFromServer.d)
+                url: getDashboardUrl,
+                dataType: "json",
+                success: function (data) {
+                    alert('success');
+                    //$.each(data, function (i, item) {
+                    //    switch (i) {
+                    //        case "Active":
+                    //            $('#active_count').text(item);
+                    //        case "InProgress":
+                    //            $('#inProgress_Count').text(item);
+                    //        case "Completed":
+                    //            $('#completed_count').text(item);
+                    //    }
+                    //});
                 },
-               error: function(jqXHR, textStatus, errorThrown) {
-                alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
-
-                $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
-                   console.log('jqXHR:');
-                   console.log(JSON.stringify(jqXHR));
-                console.log('textStatus:');
-                console.log(textStatus);
-                console.log('errorThrown:');
-                console.log(errorThrown);
-            }
+                error: function (x) {
+                    console.log(JSON.stringify(x.responseText));
+                },
+                failure: function (x) { console.log(JSON.stringify(x)) }
             });
         }
+
+        //function CallTotalServiceGroupListApi() {
+        //    var apiUrl = 'https://localhost:44367/api/Services/ServiceGroupList';
+           
+        //    $.ajax({
+        //        type: "GET",
+        //        url: apiUrl,
+        //        data: "",
+        //        contentType: "application/json",
+        //        datatype: "json",
+        //        success: function (responseFromServer) {
+        //            alert(responseFromServer.d)
+        //        },
+        //       error: function(jqXHR, textStatus, errorThrown) {
+        //        alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
+
+        //        $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
+        //           console.log('jqXHR:');
+        //           console.log(JSON.stringify(jqXHR));
+        //        console.log('textStatus:');
+        //        console.log(textStatus);
+        //        console.log('errorThrown:');
+        //        console.log(errorThrown);
+        //    }
+        //    });
+        //}
 
     </script>
    
