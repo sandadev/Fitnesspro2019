@@ -16,9 +16,30 @@ namespace Fitnesspro.Business
         {
             _servicegrouprepository = servicegrouprepository;
         }
+
+        public ValidateResponse CreateNewServiceGroup(servicegroup serviceGroup)
+        {
+            return _servicegrouprepository.CreateNewServiceGroup(serviceGroup);
+        }
+
+        public ValidateResponse DeleteServiceGroup(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ServiceViewModel> ServiceGroupList()
         {
           return  _servicegrouprepository.ServiceGroupList();
+        }
+
+        public ValidateResponse UpdateServiceGroup(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ValidateResponse UpdateServiceGroup(int id, ServiceViewModel servicegroup)
+        {
+            throw new NotImplementedException();
         }
     }
 }

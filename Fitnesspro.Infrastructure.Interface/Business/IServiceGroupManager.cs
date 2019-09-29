@@ -10,6 +10,10 @@ namespace Fitnesspro.Infrastructure.Interface.Business
 { 
         public interface IServiceGroupManager
         {
-            List<ServiceViewModel> ServiceGroupList();
-        }
+        List<ServiceViewModel> ServiceGroupList();
+        ValidateResponse UpdateServiceGroup(int id, ServiceViewModel servicegroup);
+        ValidateResponse CreateNewServiceGroup(servicegroup serviceGroup);
+        ValidateResponse DeleteServiceGroup(int id);
+
+    }
 }

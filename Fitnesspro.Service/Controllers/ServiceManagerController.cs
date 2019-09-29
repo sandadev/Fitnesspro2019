@@ -28,7 +28,27 @@ namespace Fitnesspro.Service.Controllers
             return _serviceGroupManager.ServiceGroupList();
         }
 
-       
+        [Route("CreateServiceGroup")]
+        [HttpPost]
+        public HttpStatusCode CreateNewServiceGroup([FromBody]servicegroup serviceGroup)
+        {
+            if (ModelState.IsValid)
+            {
+                ValidateResponse response = _serviceGroupManager.CreateNewServiceGroup(serviceGroup);
+                if (response.IsSuccess)
+                {
+                    return HttpStatusCode.Created;
+                }
+            }
+            return HttpStatusCode.BadRequest;
+        }
+
+        [Route("UpdateServiceGroup")]
+        [HttpPut]
+        public HttpStatusCode Put(int id, [FromBody]servicegroup serviceGroup)
+        {
+            throw new NotImplementedException("");
+        }
 
     }
 }

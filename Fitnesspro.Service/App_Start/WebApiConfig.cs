@@ -6,6 +6,8 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http.Cors;
+using System.Web.Http.ExceptionHandling;
+using Fitnesspro.Service.CustomHandler;
 
 namespace Fitnesspro.Service
 {
@@ -21,7 +23,8 @@ namespace Fitnesspro.Service
             config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            //Registering GlobalExceptionHandler
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

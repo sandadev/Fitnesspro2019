@@ -6,173 +6,68 @@
 
 <div class="right_col" role="main">
     <div class="">
-        @*<div class="page-title">
-                <div class="title_left">
-                    <h3>Services</h3>
+        <div class="page-title">
+            @*top  navigation*@
+            <div class="wraptopbar">
+                <div class="toggledown">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
                 </div>
-                <div class="title_right">
-                    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                        <div class="input-group">
-                            <span class="_3Q2N2k _30vxLD _3v1cJZ XuZows">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 6"><circle cx="3" cy="3" r="3"></circle><circle cx="11" cy="3" r="3"></circle><circle cx="19" cy="3" r="3"></circle></svg>
-                            </span>
-                        </div>
-                    </div>
+                <div class="toggleup"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <div class="pull-right">
+                    <select class="select2_single form-control export">
+                        <option>Export</option>
+                        <option>Excel</option>
+                        <option>Pdf</option>
+                    </select>
+                    <button type="submit" class="btn btn-success" style="display:inline-block;">Add New</button>
                 </div>
-            </div>*@
-        <div class="clearfix"></div>
-        @*Export bar*@
-        <div style="display: flex; flex-direction: row;" class="_1zm-ut">
-            <div style="display: flex; flex-direction: row;" class="JHUa_c">
-                @*open button*@
-                <div style="display: flex; flex-direction: column;" class="_3NVDUN _2ODZzb _1oBoVW _8K6IKr _2YDDuc _2d0dKp _2nu1E8" value="false" id="showServiceList">
-                    <span class="_3Q2N2k _30vxLD _3v1cJZ skx_qq">
-                        <svg viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg"><g><path d="M1.5 1.5v15h17v-15h-17zM1 0h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1z"></path><path d="M4 5h12H4zm0-1h12a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zM4 9h12H4zm0-1h12a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zM4 13h12H4zm0-1h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></g></svg>
-                    </span>
+
+                @*<div class="content_display">
+                    <div class="_glympservice _contentrow"> <span class="glyphicon glyphicon-tasks"></span></div>
+
+                    <div class="_content _contentrow">Hameed</div>
+                    <div class="_dots _contentrow"><span class="glyphicon glyphicon-option-horizontal"></span></div>
+                </div>*@
+
+            <div class="flex_container content_display">
+                <div  style="flex-grow: 1"> <span class="glyphicon glyphicon-tasks"></span></div>
+                <div class="_content" style="flex-grow: 8;align-self: center">Hameed</div>
+                <div style="flex-grow: 1"><span class="glyphicon glyphicon-option-horizontal"></span></div>
+
+                <div class="stretch">
+
                 </div>
-                @*Close button*@
-                <div style="display: flex; flex-direction: column;" class="_3NVDUN _2ODZzb _1oBoVW _8K6IKr _2YDDuc _2nu1E8 btnHideDetails" value="true" id="hideServiceList">
-                    <span class="_3Q2N2k _30vxLD _3v1cJZ skx_qq">
-                        <svg viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M1.5 1.5v2h17v-2h-17zM1 0h18a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1zM1.5 7.5v2h17v-2h-17zM1 6h18a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zM1.5 13.5v2h17v-2h-17zM1 12h18a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1z"></path>
-                            </g>
-                        </svg>
-                    </span>
-                </div>
-            </div><div style="flex-shrink: 1; flex-grow: 1;"></div><button class="_3ySuQR tlPbe1 _2nu1E8 _1jiWG4 _2P5TQK _1qADt0" data-qa="export-button"><span class="_3Q2N2k _30vxLD _3s37z7 _3coDyr LnBSH4"><svg xmlns="http://www.w3.org/2000/svg"><g><path d="M15.072 9.62c.506 0 .911.405.911.912v4.962a.908.908 0 0 1-.911.911H.962c-.506 0-.945-.405-.945-.911v-4.962c0-.507.439-.912.945-.912s.911.405.911.912v4.017H14.16v-4.017c0-.507.405-.912.912-.912z"></path><path d="M7.376 11.68L3.662 7.965a.878.878 0 0 1 0-1.282.878.878 0 0 1 1.283 0l2.16 2.126V.911c0-.506.406-.911.912-.911s.911.405.911.911v7.9l2.127-2.127a.917.917 0 0 1 1.316 0 .878.878 0 0 1 0 1.282L8.658 11.68a.922.922 0 0 1-.641.27.922.922 0 0 1-.641-.27z"></path></g></svg></span><div class="_10jmov"><div>Export</div></div></button><button class="_3ySuQR _2grP2T tlPbe1 _2nu1E8 _1O2-GF _2P5TQK _1qADt0" data-qa="floating-menu-button" id="btnAddNew"><div class="_10jmov"><div>Add New</div></div></button>
-        </div>
-        @*Pop up *@
-        <div id="servicepopup" style="left: 1170px; top: 120px; opacity: 1; transform: translateY(0px); transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms; width: 155.3px; height: 86px;" class="_1Y9UDj _1ns_c0" data-qa="drop-down-menu-popup">
-            <button class="_2E0-X_ _1Cp5sB _2nu1E8 _1jiWG4 _2P5TQK" id="newService" data-toggle="modal" data-target=".newService-modal">New Service</button>
-            <button class="_2E0-X_ _1Cp5sB _2nu1E8 _1jiWG4 _2P5TQK" data-qa="new-category">New Service Group</button>
-        </div>
-        @*Group*@
-        <div style="display: flex; flex-direction: row;" class="_2gUmid" data-qa="offer-catalog-category-bar-611819">
-            <div style="display: flex; flex-direction: row;" class="iNrZD8">
-                <span class="_3Q2N2k _30vxLD _8-1cM6 _3dgNZY _2qrgIO">
-                    <svg viewBox="0 0 16 10" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 0h14a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm0 4h14a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm0 4h14a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2z"></path>
-                    </svg>
-                </span>
-                <div class="_9t1fKU _1P8_io _1w_rZC" data-qa="service-group-title">hamed</div>
-            </div>
-            <button style="flex-shrink: 0;" class="_3ySuQR _2ymbP7 _30O8Wv _2nu1E8 _1jiWG4 _2P5TQK _1qADt0" data-qa="service-group-options">
-                <div class="_10jmov">
-                    <div>
-                        <span class="_3Q2N2k _30vxLD _3v1cJZ XuZows">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 6">
-                                <circle cx="3" cy="3" r="3"></circle>
-                                <circle cx="11" cy="3" r="3"></circle>
-                                <circle cx="19" cy="3" r="3"></circle>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </button>
-        </div>
-        @*Servicegroup list*@
-        <div class="_1wZEY8 _2nu1E8" data-qa="menu-item-1415783">
-            <div style="background-color: rgb(165, 223, 248);" class="_30DVxr"></div>
-            @*Services list*@
-            <div id="collapseServiceList">
-                <div class="_1icYDw">
-                    <div style="display: flex; flex-direction: row; flex-grow: 1; align-items: center;">
-                        <span class="_3Q2N2k _30vxLD _8-1cM6 _3dgNZY _3-MSnf">
-                            <svg viewBox="0 0 16 10" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0h14a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm0 4h14a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm0 4h14a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2z"></path>
-                            </svg>
-                        </span>
-                        <div style="flex-grow: 1;" class="_2TtLxf" data-qa="item-variant-bar">
-                            <div style="display: flex; flex-direction: row; flex-grow: 1;" class="_2Naf5B">
-                                <div style="display: flex; flex-direction: column; flex-grow: 1;">
-                                    <div class="_9t1fKU _3Hyp97 c_1hn3" data-qa="offer-catalog-menu-item-name">hamed gym</div>
-                                </div>
-                                <div class="_9t1fKU _3Hyp97 _2ojNy7" data-qa="service-duration">1h</div>
-                            </div>
-                            <div style="display: flex; flex-direction: row-reverse; flex-shrink: 0; flex-grow: 0; text-align: right;">
-                                <div class="_9t1fKU _3Hyp97 lxxmG_" data-qa="service-retail-price"><span>₹100</span></div>
-                                <div class="_9t1fKU _3Hyp97 _1W3ZgR" data-qa="non-discounted-price"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
 
+            </div>
+                @*<div class="title_left">
+            <h3>Services</h3>
+        </div>*@
+                @*<div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <span class="_3Q2N2k _30vxLD _3v1cJZ XuZows">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 6"><circle cx="3" cy="3" r="3"></circle><circle cx="11" cy="3" r="3"></circle><circle cx="19" cy="3" r="3"></circle></svg>
+                    </span>
+                </div>
+            </div>
+        </div>*@
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-    </div>
 </div>
 modal
 
-@*New service modal*@
-<div class="_3vtwrU _3XtDVr _3UPBoK _2H1Euj modal fade newService-modal" id="serviceModal" style="display:none;" role="dialog">
-    <div style="display: flex; flex-direction: column; flex-shrink: 1; flex-grow: 1;" class="_2vCLkQ">
-        <header class="PkFIdA _33T8Oc" data-qa="modal-header">
-            <div class="izfMlp _1HQM0r">
-                <h2 class="_9t1fKU _3XK9dh _2AVm3L _3bMN68 _1T_y7I _1j68JW">Select Service Group</h2>
-                <div role="button" class="_2y31id _2PFOGx _3pAZyb _3d4M2L _2nu1E8">
-                    <div class="_10jmov">
-                        <div>
-                            <span class="_3Q2N2k _30vxLD _3s37z7 _3gU_Sq XuZows" id="header-close-button">
-                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17 1.914L16.086 1 9 8.086 1.914 1 1 1.914 8.086 9 1 16.086l.914.914L9 9.914 16.086 17l.914-.914L9.914 9z"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div style="display: flex; flex-direction: column;" class="_1AL6HX _25TJmd" data-qa="modal-content">
-            <div style="display: flex; flex-direction: column; flex-shrink: 0; flex-grow: 1;" class="xPg8Rs">
-                <div>
-                    <div style="display: flex; flex-direction: row; flex-grow: 1; align-items: center;" class="_1QDRC6 _2nu1E8" data-qa="category-selector">
-                        <div style="display: flex; flex-direction: row; flex-grow: 1; align-items: center;" class="wPHQml">
-                            <div style="align-self: flex-start;" class="_1uOfGb" data-qa="row-button-image">
-                                <div style="background: rgb(165, 223, 248) none repeat scroll 0% 0%;" class="_23PpSG"></div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; flex-grow: 1;" class="_45ZmlC">
-                                <div style="display: flex; flex-direction: row; flex-grow: 1;" class="_3R9kbA">
-                                    <div style="display: flex; flex-direction: column; flex-grow: 1;" class="_1TBL1e">
-                                        <div class="_9t1fKU _3wn4GY _2k4Gw1" data-qa="row-button-primary" style="overflow: hidden; text-overflow: ellipsis; -moz-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3;">hamed</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w7SNh_"><span class="_3Q2N2k _30vxLD _3v1cJZ _3dgNZY"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 11"><path d="M.5 11c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6L.1.9C0 .7 0 .3.1.1s.5-.2.7 0l5 5c.2.2.2.6.1.8l-5 5c-.1.1-.3.1-.4.1z"></path></svg></span></div>
-                        </div>
-                    </div>
-                    <div style="display: flex; flex-direction: row; flex-grow: 1; align-items: center;" class="_1QDRC6 _2nu1E8" data-qa="category-selector">
-                        <div style="display: flex; flex-direction: row; flex-grow: 1; align-items: center;" class="wPHQml">
-                            <div style="align-self: flex-start;" class="_1uOfGb" data-qa="row-button-image">
-                                <div style="background: rgb(165, 223, 248) none repeat scroll 0% 0%;" class="_23PpSG">
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; flex-grow: 1;" class="_45ZmlC">
-                                <div style="display: flex; flex-direction: row; flex-grow: 1;" class="_3R9kbA">
-                                    <div style="display: flex; flex-direction: column; flex-grow: 1;" class="_1TBL1e">
-                                        <div class="_9t1fKU _3wn4GY _2k4Gw1" data-qa="row-button-primary" style="overflow: hidden; text-overflow: ellipsis; -moz-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3;">Hair</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w7SNh_">
-                                <span class="_3Q2N2k _30vxLD _3v1cJZ _3dgNZY">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 11">
-                                        <path d="M.5 11c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6L.1.9C0 .7 0 .3.1.1s.5-.2.7 0l5 5c.2.2.2.6.1.8l-5 5c-.1.1-.3.1-.4.1z"></path>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 @section vendors {
     <script>
         $(document).ready(function () {
+            $('#mainpageinfo').html("Services");
             $('#collapseServiceList').collapse()
             $('#servicepopup').hide();
             //Calling add client method
@@ -188,23 +83,13 @@ modal
 
 
           function CallTotalServiceGroupListApi() {
-            var getDashboardUrl ='http://localhost:44367/api/Services/ServiceGroupList'
+              var getDashboardUrl = 'https://localhost:44367/api/Services/ServiceGroupList'
             $.ajax({
                 type: "GET",
                 url: getDashboardUrl,
                 dataType: "json",
                 success: function (data) {
-                    alert('success');
-                    //$.each(data, function (i, item) {
-                    //    switch (i) {
-                    //        case "Active":
-                    //            $('#active_count').text(item);
-                    //        case "InProgress":
-                    //            $('#inProgress_Count').text(item);
-                    //        case "Completed":
-                    //            $('#completed_count').text(item);
-                    //    }
-                    //});
+                    console.log(JSON.stringify(data));
                 },
                 error: function (x) {
                     console.log(JSON.stringify(x.responseText));
@@ -213,31 +98,7 @@ modal
             });
         }
 
-        //function CallTotalServiceGroupListApi() {
-        //    var apiUrl = 'https://localhost:44367/api/Services/ServiceGroupList';
-           
-        //    $.ajax({
-        //        type: "GET",
-        //        url: apiUrl,
-        //        data: "",
-        //        contentType: "application/json",
-        //        datatype: "json",
-        //        success: function (responseFromServer) {
-        //            alert(responseFromServer.d)
-        //        },
-        //       error: function(jqXHR, textStatus, errorThrown) {
-        //        alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
-
-        //        $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
-        //           console.log('jqXHR:');
-        //           console.log(JSON.stringify(jqXHR));
-        //        console.log('textStatus:');
-        //        console.log(textStatus);
-        //        console.log('errorThrown:');
-        //        console.log(errorThrown);
-        //    }
-        //    });
-        //}
+      
 
     </script>
    
